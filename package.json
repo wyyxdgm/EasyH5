@@ -1,0 +1,28 @@
+{
+  "name": "easyh5",
+  "version": "1.0.0",
+  "description": "easy build h5 by template",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wyyxdgm/EasyH5.git"
+  },
+  "keywords": [
+    "h5",
+    "template",
+    "build"
+  ],
+  "author": "guimaodai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wyyxdgm/EasyH5/issues"
+  },
+  "homepage": "https://github.com/wyyxdgm/EasyH5#readme",
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1"
+  }
+}
