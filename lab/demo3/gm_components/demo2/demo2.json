@@ -1,0 +1,14 @@
+{
+	"content1": {
+		"template": "demo1@V1.0.0",
+		"data": {
+			"placeholder": "hello by demo2"
+		}
+	},
+	"listContent": [{
+		"template": "demo1@V1.0.0",
+		"data": {
+			"placeholder": "hello by demo2"
+		}
+	}, "text2", "text3"]
+}
