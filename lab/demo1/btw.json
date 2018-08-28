@@ -1,0 +1,21 @@
+{
+  "name": "demo1",
+  "homepage": "https://github.com/wyyxdgm/EasyH5",
+  "authors": [
+    "Guimao Dai <guimaodai@gmail.com>"
+  ],
+  "description": "description",
+  "main": "main file",
+  "keywords": [
+    "keywords"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
