@@ -5,7 +5,9 @@
     "Guimao Dai <guimaodai@gmail.com>"
   ],
   "description": "description",
-  "main": "main file",
+  "main": "demo1",
+  "type": "element",
+  "metadata": {},
   "keywords": [
     "keywords"
   ],
