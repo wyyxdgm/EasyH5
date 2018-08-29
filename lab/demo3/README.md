@@ -13,7 +13,7 @@ GM 开发流程
 2.quick start
 
 ```
-git clone ...
+git clone [url of this repository]
 gm install
 gm build
 
