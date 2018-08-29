@@ -47,6 +47,20 @@ gm build
 
 ##架构解释
 * 主体框架下，gm.json会配置源文件的文件名称（不带后缀），以及依赖关系。
+
+```
+{
+  "name": "demo3",              #project name && gm publish name
+  "main": "demo3",              #main source file
+  "output": "gm.html",          #target file for building, 'gm.html' as defult
+  "dependencies": {             #the templates that used in this project
+    "demo1": "@1.0.0",
+    "demo2": "@1.0.0"
+  }
+}
+```
+
+
 * `gm install` 生成gm_components文件夹，并包含相关依赖包。
 * `gm build` 通过数据依赖继承关系，生成gm.html，举例如下：
 
