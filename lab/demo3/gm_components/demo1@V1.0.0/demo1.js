@@ -1,2 +1,4 @@
-console.log('demo1.js export demo1.json');
-module.exports = require('./demo1.json');
+console.log('demo1.js export self');
+module.exports = {
+	"placeholder": "请输入文本"
+}
