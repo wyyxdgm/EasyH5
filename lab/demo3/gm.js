@@ -34,6 +34,7 @@ console.log('base----------------', {
 	json
 })
 let ejs = require('ejs');
+
 /**
  *
  * 构建当前页面的json。
