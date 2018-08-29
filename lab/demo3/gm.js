@@ -21,13 +21,15 @@ let loadHJ = (baseDir) => {
 	// })
 	return {
 		htmlContent,
-		json
+		json,
+		conf
 	};
 }
 
 let {
 	htmlContent,
-	json
+	json,
+	conf
 } = loadHJ(__dirname);
 console.log('base----------------', {
 	htmlContent,
@@ -136,7 +138,7 @@ let build = () => {
 	return htmlStr;
 }
 let htmlStr = build();
-fs.writeFileSync(path.join(__dirname, 'gm.html'), htmlStr);
+fs.writeFileSync(path.join(__dirname, conf.output || 'gm.html'), htmlStr);
 
 //bower
 // cache                   Manage bower cache

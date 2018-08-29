@@ -6,6 +6,7 @@
   ],
   "description": "firt demo for build html template",
   "main": "demo3",
+  "output": "gm.html",
   "keywords": [
     "js",
     "vue",
