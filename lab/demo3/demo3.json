@@ -1,9 +1,9 @@
 {
 	"partOne": {
-		"template": "demo2"
+		"template": "demo2@V1.0.0"
 	},
 	"partTwo": {
-		"template": "demo2",
+		"template": "demo2@V1.0.0",
 		"data": {
 			"content1": {
 				"template": "demo1@V1.0.0",

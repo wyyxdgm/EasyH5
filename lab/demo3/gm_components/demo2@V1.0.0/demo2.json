@@ -10,5 +10,16 @@
 		"data": {
 			"placeholder": "hello by demo2"
 		}
-	}, "text2", "text3"]
+	}, "text2", "text3"],
+	"tableSeries": [{
+		"prop": "date",
+		"label": "日期"
+	}, {
+		"prop": "name",
+		"label": "姓名"
+	}, {
+		"prop": "address",
+		"label": "地址",
+		"onlick": "click1"
+	}]
 }
