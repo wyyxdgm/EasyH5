@@ -1,20 +1,24 @@
 let fs = require('fs');
 let path = require('path');
 let _ = require('underscore');
+let _require = (path_name_no_suffix) => {
+	let json;
+	try {
+		json = require(path_name_no_suffix);
+	} catch (e) {
+		console.error(`no ${path_name_no_suffix} with suffix .json nor .js`);
+	}
+	return json;
+}
 let loadHJ = (baseDir) => {
 	if (!fs.existsSync(path.join(baseDir, 'gm.json'))) return console.error('no gm.json');
 	let conf = require(path.join(baseDir, './gm.json'));
 	if (!conf.main) return console.error('no main gm.json');
-	let [htmlPath, jsonPath] = [conf.main + '.html', conf.main + '.json'].map(_p => path.join(baseDir, _p));
+	let [htmlPath, jsonPath] = [conf.main + '.html', conf.main].map(_p => path.join(baseDir, _p));
 	if (!fs.existsSync(htmlPath)) return console.error('no file ' + htmlPath + ' that defined in gm.json by main');
-	if (!fs.existsSync(jsonPath)) return console.error('no file ' + jsonPath + ' that defined in gm.json by main');
-	let [htmlContent, jsonContent] = [htmlPath, jsonPath].map(_path => fs.readFileSync(_path).toString());
-	let json;
-	try {
-		json = JSON.parse(jsonContent)
-	} catch (e) {
-		console.error(e);
-	}
+	if (!_require(jsonPath)) return console.error('wich is defined in gm.json by main!');
+	let htmlContent = fs.readFileSync(htmlPath).toString()
+	let json = _require(jsonPath);
 	// console.log("load======", baseDir, {
 	// 	htmlContent,
 	// 	json
@@ -31,10 +35,10 @@ let {
 	json,
 	conf
 } = loadHJ(__dirname);
-console.log('base----------------', {
-	htmlContent,
-	json
-})
+// console.log('base----------------', {
+// 	htmlContent,
+// 	json
+// })
 let ejs = require('ejs');
 
 /**
@@ -120,7 +124,11 @@ let build = () => {
 			for (key in data) {
 				data[key] = resolveKey(data, key);
 			}
-			console.log('ejs.render------------', moduleComponent.htmlContent, data)
+			// console.log('ejs.render:')
+			// console.log(moduleComponent.htmlContent);
+			// console.log('- - - - - - - - - - - - ')
+			// console.log(data);
+			// console.log('========================')
 			return ejs.render(moduleComponent.htmlContent, data);
 		} else if (_.isArray(v)) {
 			// console.log('isArray====================', v)

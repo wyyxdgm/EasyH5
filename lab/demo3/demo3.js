@@ -1,1 +1,1 @@
-console.log('demo3');
+module.exports = require('./demo3.json');
